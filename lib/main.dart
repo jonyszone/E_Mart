@@ -1,28 +1,31 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  build(context) {
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('my first app'),
-          centerTitle: true,
-          backgroundColor: Colors.green.shade400,
+          title: Text('Food-Mart'),
         ),
-        body: Center(
-          child: Text("It's me Shafi"),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Text('click'),
-          backgroundColor: Colors.black87,
-        ),
+        body: Column(children: [
+          Container(
+            margin: EdgeInsets.all(10.2),
+            child:
+                ElevatedButton(onPressed: () {}, child: Text('Add Products')),
+          ),
+          Card(
+            child: Column(
+              children: [
+                Image.asset('assets/spicy.jpg'),
+                Text('Attractive Spicy Food')
+              ],
+            ),
+          ),
+        ]),
       ),
-      debugShowCheckedModeBanner: false,
     );
   }
 }
