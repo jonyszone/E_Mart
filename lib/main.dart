@@ -1,39 +1,21 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_projects/product_manager.dart';
+
 void main() => runApp(MyApp());
 
-class MyApp extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return _MyAppState();
-  }
-}
-
-class _MyAppState extends State<MyApp> {
-  List<String> _products = ["Food Tester"];
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.green)
+              .copyWith(secondary: Colors.deepOrange)),
       home: Scaffold(
         appBar: AppBar(
           title: Text('Food-Mart'),
         ),
-        body: Column(
-          children: [
-            Container(
-              margin: EdgeInsets.all(10.2),
-              child: ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      _products.add('Spicy Food Tester');
-                    });
-                  },
-                  child: Text('Add Products')),
-            ),
-          ],
-        ),
+        body: ProductManager('Spicy Foods'),
       ),
     );
   }
