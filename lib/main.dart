@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
-
-import 'package:flutter_projects/product_manager.dart';
+import 'package:flutter_projects/screens/products_overview.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'OnlineShop',
       theme: ThemeData(
-          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.green)
-              .copyWith(secondary: Colors.deepOrange)),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Food-Mart'),
-        ),
-        body: ProductManager(startingProduct: 'Spicy Foods'),
+        primarySwatch: Colors.blue,
       ),
+      home: ProductsOverview(),
     );
   }
 }
